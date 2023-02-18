@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Sqs-Demo
+server:
+  port: 3030
+
+cloud:
+  aws:
+    credentials:
+      access-key: ${AWS_KEY}
+      secret-key: ${AWS_SECRET}
+    region:
+      static: us-east-1
+    sqs:
+      enabled: true
+
+
+me:
+  namila:
+    sqs:
+      name: simple-sqs.fifo
+      messageCount: 5
