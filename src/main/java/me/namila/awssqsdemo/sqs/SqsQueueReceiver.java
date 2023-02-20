@@ -15,7 +15,7 @@ public class SqsQueueReceiver {
     @Autowired
     private SqsService service;
 
-    @SqsListener(value = "simple-sqs.fifo", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
+    @SqsListener(value = "${me.namila.sqs.name}", deletionPolicy = SqsMessageDeletionPolicy.ON_SUCCESS)
     public void receiveMessage(String message, @Header("MessageGroupId") String id) throws InterruptedException {
         service.handleMessage(message, id);
     }

@@ -20,3 +20,9 @@ me:
     sqs:
       name: simple-sqs.fifo
       messageCount: 5
+      aws:
+        core-thread-count: 5
+        max-thread-count: 10
+        queue-capacity: 20
+
+
